@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Signup Form</title>
+    <link rel="stylesheet" href="userLogin.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/style-rtl.css" />
+  </head>
+  <body dir="rtl">
+    <!-- credits to the writter @leonam-silva-de-souza -->
+    <div class="container">
+      <div class="form-box login">
+        <form action="#">
+          <h1>ثبت نام در کلاس یار</h1>
+          <div class="input-box">
+            <input type="text" placeholder="موبایل یا ایمیل" />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="نام" />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="نام خانوادگی" />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="رمز" />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="تکرار رمز" />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <button type="submit" class="btn btn-blue">ثبت نام</button>
+        </form>
+      </div>
+
+      <div class="form-box register">
+        <form action="#">
+          <h1>ورود به کلاس یار</h1>
+          <div class="input-box">
+            <input type="text" placeholder="نام کاربری" />
+            <i class="bx bxs-user"></i>
+          </div>
+
+          <div class="input-box">
+            <input type="password" placeholder="رمز ورود" />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <button type="submit" class="btn btn-blue">ورود</button>
+        </form>
+      </div>
+
+      <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+          <h1>سلام به کلاس یار خوش آمدید</h1>
+          <p>اگر حساب دارید وارد شوید</p>
+          <button class="btn register-btn btn-blue">ورود</button>
+        </div>
+
+        <div class="toggle-panel toggle-right">
+          <h1>خوش آمدید</h1>
+          <p>اگه حساب ندارید ثبت نام کنید</p>
+          <button class="btn login-btn btn-blue">ثبت نام</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="userLogin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود موسسات</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Plugins CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/font-awesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/choices/css/choices.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css"
+    />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style-rtl.css" />
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .login-container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        padding: 40px;
+        transition: all 0.3s ease;
+      }
+
+      .login-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .login-header h2 {
+        color: #4a4a4a;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .login-header p {
+        color: #7a7a7a;
+        font-size: 14px;
+      }
+
+      .logo {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+      .bg-circle1 {
+        width: 200px;
+        height: 200px;
+        right: -40px;
+        bottom: -43px;
+      }
+      .bg-circle2 {
+        width: 120px;
+        height: 120px;
+        left: -26px;
+        top: -4px;
+      }
+      .bg-circle3 {
+        width: 50px;
+        height: 50px;
+        right: 43px;
+        top: 231px;
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <div class="main-login-senction position-relative">
+      <div class="login-container overflow-hidden">
+        <div class="bg-blue rounded-circle position-absolute bg-circle1"></div>
+        <div class="bg-blue rounded-circle position-absolute bg-circle2"></div>
+        <div class="bg-blue rounded-circle position-absolute bg-circle3"></div>
+
+        <div class="text-center">
+          <img
+            src="../assets/images/classYar-logo1.png"
+            class="w-50 h-50"
+            alt="لوگو کلاس یار"
+          />
+          <h2 class="fs-4 mt-5">ورود به کلاس یار</h2>
+        </div>
+        <hr />
+
+        <div class="login-header">
+          <p>
+            لطفا رمز عبور و نام کاربری که همکاران ما به شما دادن را وارد کنید
+          </p>
+        </div>
+
+        <form>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">نام کاربری</label>
+          </div>
+          <div class="form-floating mb-4">
+            <input
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+            />
+            <label for="floatingPassword">رمز عبور</label>
+          </div>
+
+          <button type="submit" class="d-block w-100 btn btn-primary">
+            ورود به پنل اموزشگاه
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Vendors -->
+    <script src="../assets/vendor/choices/js/choices.min.js"></script>
+    <script src="../assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+
+    <!-- Template Functions -->
+    <script src="assets/js/functions.js"></script>
+  </body>
+</html>
