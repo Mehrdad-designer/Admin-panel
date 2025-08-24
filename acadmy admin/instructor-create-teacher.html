@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <!-- Mirrored from fixdevelopdemo.ir/theme/eduport/rtl/instructor-create-course.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Dec 2024 07:27:34 GMT -->
+  <head>
+    <title>کلاس یار</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="" />
+    <meta
+      name="description"
+      content="Eduport - قالب HTML دوره آنلاین و آموزش"
+    />
+
+    <!-- Dark mode -->
+    <script>
+      const storedTheme = localStorage.getItem("theme");
+
+      const getPreferredTheme = () => {
+        if (storedTheme) {
+          return storedTheme;
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      };
+
+      const setTheme = function (theme) {
+        if (
+          theme === "auto" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          document.documentElement.setAttribute("data-bs-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-bs-theme", theme);
+        }
+      };
+
+      setTheme(getPreferredTheme());
+
+      window.addEventListener("DOMContentLoaded", () => {
+        var el = document.querySelector(".theme-icon-active");
+        if (el != "undefined" && el != null) {
+          const showActiveTheme = (theme) => {
+            const activeThemeIcon = document.querySelector(
+              ".theme-icon-active use"
+            );
+            const btnToActive = document.querySelector(
+              `[data-bs-theme-value="${theme}"]`
+            );
+            const svgOfActiveBtn = btnToActive
+              .querySelector(".mode-switch use")
+              .getAttribute("href");
+
+            document
+              .querySelectorAll("[data-bs-theme-value]")
+              .forEach((element) => {
+                element.classList.remove("active");
+              });
+
+            btnToActive.classList.add("active");
+            activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+          };
+
+          window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", () => {
+              if (storedTheme !== "light" || storedTheme !== "dark") {
+                setTheme(getPreferredTheme());
+              }
+            });
+
+          showActiveTheme(getPreferredTheme());
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((toggle) => {
+              toggle.addEventListener("click", () => {
+                const theme = toggle.getAttribute("data-bs-theme-value");
+                localStorage.setItem("theme", theme);
+                setTheme(theme);
+                showActiveTheme(theme);
+              });
+            });
+        }
+      });
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/classYar-logo1.png" />
+
+    <!-- Plugins CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/font-awesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/choices/css/choices.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/aos/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/glightbox/css/glightbox.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/quill/css/quill.snow.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/vendor/stepper/css/bs-stepper.min.css"
+    />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css" />
+  </head>
+
+  <body>
+    <!-- **************** MAIN CONTENT START **************** -->
+    <main>
+      <!-- =======================
+Page Banner START -->
+      <section
+        class="py-0 bg-blue h-100px align-items-center d-flex h-200px rounded-0"
+        style="
+          background: url(assets/images/pattern/04.png) no-repeat center center;
+          background-size: cover;
+        "
+      >
+        <!-- Main banner background image -->
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <!-- Title -->
+              <h1 class="text-white">افزودن مدرس</h1>
+              <p class="text-white mb-0">
+                لطفا
+                <a href="#" class="text-white"><u>"قبل از افزودن مدرس"</u></a>
+                ویدیو ما را بخوانید.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =======================
+Page Banner END -->
+
+      <!-- =======================
+Steps START -->
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+              <!-- Content -->
+              <p class="text-center">
+                با این لیست شما میتوانید مدرس خود را به پنل خود در وب سایت
+                <b>کلاس یار</b>اضافه نمایید
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-transparent border rounded-3 mb-5">
+            <div id="stepper" class="bs-stepper stepper-outline">
+              <!-- Card header -->
+              <div class="card-header bg-light border-bottom px-lg-5">
+                <!-- Step Buttons START -->
+                <div class="bs-stepper-header" role="tablist">
+                  <!-- Step 1 -->
+                  <div class="step" data-target="#step-1">
+                    <div class="d-grid text-center align-items-center">
+                      <button
+                        type="button"
+                        class="btn btn-link step-trigger mb-0"
+                        role="tab"
+                        id="steppertrigger1"
+                        aria-controls="step-1"
+                      >
+                        <span class="bs-stepper-circle">1</span>
+                      </button>
+                      <h6 class="bs-stepper-label d-none d-md-block">
+                        جزئیات افزودن مدرس
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <!-- Step Buttons END -->
+              </div>
+
+              <!-- Card body START -->
+              <div class="card-body">
+                <!-- Step content START -->
+                <div class="bs-stepper-content">
+                  <form onsubmit="return false">
+                    <!-- Step 1 content START -->
+                    <div
+                      id="step-1"
+                      role="tabpanel"
+                      class="content fade"
+                      aria-labelledby="steppertrigger1"
+                    >
+                      <!-- Title -->
+                      <h4 class="fs-5 ff-vb">جزئیات افزودن مدرس</h4>
+
+                      <hr />
+                      <!-- Divider -->
+
+                      <!-- Basic information START -->
+                      <div class="row g-4">
+                        <!-- Course title -->
+                        <div class="col-12">
+                          <label class="form-label">عنوان مدرس</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="علی قیوم"
+                          />
+                        </div>
+
+                        <!-- Short description -->
+                        <div class="col-12">
+                          <label class="form-label">توضیحات کوتاه</label>
+                          <textarea
+                            class="form-control"
+                            rows="2"
+                            placeholder=""
+                          ></textarea>
+                        </div>
+                        <!-- Short description -->
+                        <div class="col-12">
+                          <label class="form-label">دوره ها مدرس</label>
+                          <textarea
+                            class="form-control"
+                            rows="2"
+                            placeholder=""
+                          ></textarea>
+                        </div>
+
+                        <!-- Course category -->
+                        <div class="col-md-6">
+                          <label class="form-label">دسته بندی کلاس مدرس</label>
+                          <select
+                            class="form-select js-choice border-0 z-index-9 bg-transparent"
+                            aria-label=".form-select-sm"
+                            data-search-enabled="true"
+                          >
+                            <option value="">انتخاب</option>
+                            <option>مهندسی</option>
+                            <option>پزشکی</option>
+                            <option>طراحی وب</option>
+                            <option>حسابداری</option>
+                            <option>برنامه نویسی</option>
+                          </select>
+                        </div>
+
+                        <!-- Course time -->
+                        <div class="col-md-6">
+                          <label class="form-label">سطح دوره های مدرس</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder=""
+                          />
+                        </div>
+                        <!-- Course time -->
+                        <div class="col-md-6">
+                          <label class="form-label">قیمت دوره های مدرس</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="کلاس موسیقی"
+                          />
+                        </div>
+
+                        <!-- Total lecture -->
+                        <div class="col-md-6">
+                          <label class="form-label">تعداد کلاس ها مدرس</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            placeholder="2 کلاس "
+                          />
+                        </div>
+
+                        <!-- Step 1 button -->
+                        <div class="d-flex justify-content-end mt-3">
+                          <button class="btn btn-primary next-btn mb-0">
+                            مرحله بعد
+                          </button>
+                        </div>
+                      </div>
+                      <!-- Basic information START -->
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- Card body END -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =======================
+Steps END -->
+    </main>
+    <!-- **************** MAIN CONTENT END **************** -->
+
+    <!-- =======================
+Footer START -->
+    <footer class="bg-dark p-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Widget -->
+          <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            <!-- Logo START -->
+            <a href="index.html">
+              <img
+                class="h-20px"
+                src="assets/images/logo-light.svg"
+                alt="logo"
+              />
+            </a>
+          </div>
+
+          <!-- Widget -->
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="text-center text-white">
+              ارائه شده در سایت
+              <a
+                href="https://www.rtl-theme.com/"
+                target="_blank"
+                class="text-reset btn-link"
+                >کلاس یار</a
+              >
+            </div>
+          </div>
+          <!-- Widget -->
+          <div class="col-md-4">
+            <!-- Rating -->
+            <ul class="list-inline mb-0 text-center text-md-end">
+              <li class="list-inline-item ms-2">
+                <a href="#"><i class="text-white fab fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item ms-2">
+                <a href="#"><i class="text-white fab fa-instagram"></i></a>
+              </li>
+              <li class="list-inline-item ms-2">
+                <a href="#"><i class="text-white fab fa-linkedin-in"></i></a>
+              </li>
+              <li class="list-inline-item ms-2">
+                <a href="#"><i class="text-white fab fa-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- =======================
+Footer END -->
+
+    <!-- Popup modal for add lecture START -->
+    <div
+      class="modal fade"
+      id="addLecture"
+      tabindex="-1"
+      aria-labelledby="addLectureLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-dark">
+            <h5 class="modal-title text-white" id="addLectureLabel">
+              افزودن ویدیو
+            </h5>
+            <button
+              type="button"
+              class="btn btn-sm btn-light mb-0"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="row text-start g-3">
+              <!-- Course name -->
+              <div class="col-12">
+                <label class="form-label"
+                  >نام ویدیو <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="نام ویدیو را وارد کنید"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger-soft my-0"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+            <button type="button" class="btn btn-success my-0">ذخیره</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popup modal for add lecture END -->
+
+    <!-- Popup modal for add topic START -->
+    <div
+      class="modal fade"
+      id="addTopic"
+      tabindex="-1"
+      aria-labelledby="addTopicLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-dark">
+            <h5 class="modal-title text-white" id="addTopicLabel">
+              افزودن مدرس
+            </h5>
+            <button
+              type="button"
+              class="btn btn-sm btn-light mb-0"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="row text-start g-3">
+              <!-- Topic name -->
+              <div class="col-md-6">
+                <label class="form-label">نام دوره</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="نام دوره"
+                />
+              </div>
+              <!-- Video link -->
+              <div class="col-md-6">
+                <label class="form-label">لینک ویدیو</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="لینک ویدیو"
+                />
+              </div>
+              <!-- Description -->
+              <div class="col-12 mt-3">
+                <label class="form-label">توضیحات</label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  placeholder=""
+                  spellcheck="false"
+                ></textarea>
+              </div>
+              <!-- Buttons -->
+              <div class="col-6 mt-3">
+                <div
+                  class="btn-group"
+                  role="group"
+                  aria-label="Basic radio toggle button group"
+                >
+                  <!-- رایگان button -->
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    id="option1"
+                    checked=""
+                  />
+                  <label
+                    class="btn btn-sm btn-light btn-primary-soft-check border-0 m-0"
+                    for="option1"
+                    >رایگان</label
+                  >
+                  <!-- Premium button -->
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    id="option2"
+                  />
+                  <label
+                    class="btn btn-sm btn-light btn-primary-soft-check border-0 m-0"
+                    for="option2"
+                    >پولی</label
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger-soft my-0"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+            <button type="button" class="btn btn-success my-0">ذخیره</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popup modal for add topic END -->
+
+    <!-- Popup modal for add faq START -->
+    <div
+      class="modal fade"
+      id="addQuestion"
+      tabindex="-1"
+      aria-labelledby="addQuestionLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-dark">
+            <h5 class="modal-title text-white" id="addQuestionLabel">
+              افزودن سوال
+            </h5>
+            <button
+              type="button"
+              class="btn btn-sm btn-light mb-0"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="row text-start g-3">
+              <!-- Question -->
+              <div class="col-12">
+                <label class="form-label">پرسش</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="پرسش خود را ثبت کنید"
+                />
+              </div>
+              <!-- Answer -->
+              <div class="col-12 mt-3">
+                <label class="form-label">پاسخ</label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  placeholder="پاسخ خود را ثبت کنید"
+                  spellcheck="false"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger-soft my-0"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+            <button type="button" class="btn btn-success my-0">ذخیره</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popup modal for add faq END -->
+
+    <!-- Back to top -->
+    <div class="back-top">
+      <i
+        class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"
+      ></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Vendors -->
+    <script src="../assets/vendor/choices/js/choices.min.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.js"></script>
+    <script src="../assets/vendor/quill/js/quill.min.js"></script>
+    <script src="../assets/vendor/stepper/js/bs-stepper.min.js"></script>
+
+    <!-- Template Functions -->
+    <script src="../assets/js/functions.js"></script>
+  </body>
+
+  <!-- Mirrored from fixdevelopdemo.ir/theme/eduport/rtl/instructor-create-course.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Dec 2024 07:27:37 GMT -->
+</html>
